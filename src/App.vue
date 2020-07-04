@@ -87,36 +87,21 @@
     </v-app-bar>
 
     <v-main>
-      <v-container class="fill-height">
-        <v-row
-          justify="center"
-          align="center"
-        >
-          <v-col class="shrink">
-            <v-tooltip right>
-              <template v-slot:activator="{ on }">
-                <v-btn
-                  :href="source"
-                  icon
-                  large
-                  target="_blank"
-                  v-on="on"
-                >
-                  <v-icon large>mdi-code-tags</v-icon>
-                </v-btn>
-              </template>
-              <span>Source</span>
-            </v-tooltip>
-          </v-col>
-        </v-row>
+      <v-container fluid>
+            <Timeline/>
       </v-container>
     </v-main>
   </v-app>
 </template>
 
+
 <script>
+  import Timeline from './components/Timeline.vue'
   export default {
     'name' : 'App',
+    components: {
+        Timeline,
+    },
     props: {
       source: String,
     },
