@@ -96,6 +96,7 @@
 
 
 <script>
+  import axios from 'axios'
   import Timeline from './components/Timeline.vue'
   export default {
     'name' : 'App',
@@ -107,6 +108,9 @@
     },
     data: () => ({
       drawer: null,
+      api_key:'232f840e22664739b4cca26a5acf49c5', 
+      articles: [],
+      errors: [] ,
       items: [
         { icon: 'mdi-trending-up', text: 'Most Popular' },
         { icon: 'mdi-youtube-subscription', text: 'Subscriptions' },
@@ -123,7 +127,16 @@
       ],
     }),
     created () {
-      this.$vuetify.theme.dark = true
+      this.$vuetify.theme.dark = true,
+      axios.get('https://newsapi.org/v2/top-headlines?country=in&apiKey='+this.api_key)
+        .then(response => {
+          this.articles = response.data.articles
+          console.log('data:')
+          console.log(response.data.articles) // This will give you access to the full object
+        })
+        .catch(e => {
+          this.errors.push(e)
+        })
     },
   }
 </script>
