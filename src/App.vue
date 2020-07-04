@@ -1,5 +1,3 @@
-
- 
 <template>
   <v-app id="inspire">
     <v-navigation-drawer
@@ -67,10 +65,10 @@
         class="mx-4"
         large
       >
-        mdi-youtube
+        mdi-update
       </v-icon>
       <v-toolbar-title class="mr-12 align-center">
-        <span class="title">Youtube</span>
+        <span class="title">What's going on ?</span>
       </v-toolbar-title>
       <v-spacer></v-spacer>
       <v-row
