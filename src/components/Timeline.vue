@@ -1,6 +1,6 @@
 <template>
   <div>
-  <div v-for="article in articles" :key="article.title">
+  <div v-for="(article, itemObjKey) in articles" :key="article.title">
   <v-card
     class="mx-auto"
     max-width="100%"
@@ -14,10 +14,10 @@
       <v-card-title>{{ article.title }}</v-card-title>
     </v-img>
 
-    <v-card-subtitle class="pb-0">#1</v-card-subtitle>
+    <v-card-subtitle class="pb-0">#{{itemObjKey + 1}}</v-card-subtitle>
 
     <v-card-text class="text--primary">
-      <div>Whitehaven Beach</div>
+      <div>{{ article.source.name }} </div>
 
       <div>{{ article.description }}</div>
     </v-card-text>
