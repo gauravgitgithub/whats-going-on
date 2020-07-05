@@ -88,7 +88,7 @@
 
     <v-main>
       <v-container fluid>
-            <Timeline/>
+            <Timeline :articles="articles"></Timeline>
       </v-container>
     </v-main>
   </v-app>
